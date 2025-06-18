@@ -47,20 +47,68 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
+
+/** ----- General ----- **/
+
 body {
 	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+nav li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+li:hover {
+	color: #B1663C;
+}
+
+section {
+	margin: 50px 0
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+/** ----- Admin ----- **/
+
+.edit-mode-barre {
+	background-color: black;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+}
+
+.edit-mode i, .edit-mode p {
+	color: white;
+	height: 20px;
+}
+
+.edit-mode-modifier-gallerie i, .edit-mode-modifier-gallerie p {
+	color: black;
+	display: flex;
+}
+
+/** ----- Header ----- **/
+
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0
 }
-section {
-	margin: 50px 0
-}
+
 
 h1{
 	display: flex;
@@ -78,26 +126,17 @@ h1 > span {
 ;
 }
 
+/** ----- Main ----- **/
+
 h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
 	color: #1D6154
 }
-nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
 
-}
-nav li {
-	padding: 0 10px;
-	font-size: 1.2em;
-}
+/** --- introduction --- **/
 
-li:hover {
-	color: #B1663C;
-}
 #introduction {
 	display: flex;
 	align-items: center;
@@ -121,10 +160,44 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
+/** --- Portfolio --- **/
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+.filtres {
+	display: flex;
+	justify-content: space-between;
+	width: 585px;
+	margin: auto;
+	margin-bottom: 50px;
+	
+}
+
+.filtres button {
+	border: 1px solid #1D6154;
+	border-radius: 30px;
+	padding: 9px;
+	font-weight: 700;
+	min-width: 100px;
+	font-size: 16px;
+	font-family: 'Syne';
+}
+
+.filtres button:hover, .filtresbutton:focus, .boutonTous{
+	background-color: #1D6154;
+	color: white;
+}
+
+.boutonItems, .boutonAppartements, .boutonHotels {
+	color: #1D6154;
+	background-color: white;
+}
+
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -137,6 +210,9 @@ li:hover {
 	width: 100%;
 
 }
+
+/** --- Contact --- **/
+
 #contact {
 	width: 50%;
 margin: auto;
@@ -179,6 +255,32 @@ input[type="submit"]{
 	text-align: center;
 	border-radius: 60px ;
 }
+
+/** --- Modal --- **/
+
+.modal {
+	background-color: rgba(0, 0, 0, 0.3);
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 650px;
+	right: 0;
+	bottom: 0;
+	transition: all 0.3s ease-in-out;
+	z-index: -1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 630px;
+	height: 670px;
+}
+
+.modal.open {
+	opacity: 1;
+	z-index: 10;
+}
+
+/** ----- Footer ----- **/
 
 footer nav ul {
 	display: flex;
