@@ -11,6 +11,7 @@ modalWork.style.display = "none"
 
 function ouvrirModal() {
     modal.classList.add("open")
+    displayWorksModal(window.allWorks)
 }
 
 function fermerModal() {
@@ -44,3 +45,20 @@ modal.addEventListener("click", (e) => {
         fermerModal()
     }
 })
+
+
+
+function displayWorksModal(works) {
+    const galleryContent = document.querySelector(".galleryContent")
+    galleryContent.innerHTML = ""
+
+    works.forEach(({ imageUrl, title }) => {
+    const figure = document.createElement("figure")
+    figure.innerHTML = `
+        <img src="${imageUrl}" alt="${title}">
+        <button class="deleteButton"><i class="fa-solid fa-trash-can"></i></button>
+    `
+    galleryContent.appendChild(figure)
+  })
+}
+

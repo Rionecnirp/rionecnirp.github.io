@@ -307,7 +307,7 @@ input[type="submit"]{
 	position: relative;
 	overflow: auto;
 	width: 630px;
-	height: 688px;
+	min-height: 688px;
 	padding: 20px;
 	background-color: #FFFEF8;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -393,6 +393,37 @@ input[type="submit"]{
   	text-align: center;
   	padding-top: 40px;
   	padding-bottom: 60px;
+}
+
+.galleryContent {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-column-gap: 6px;
+	grid-row-gap: 25px;
+	width: 419px;
+	margin-bottom: 30px;
+}
+
+.galleryContent img {
+	height: 100px;
+}
+
+.galleryContent figure {
+	height: 100px;
+}
+
+.deleteButton {
+	position: relative;
+	left: 20px;
+	bottom: 105px;
+	background-color: black;
+	color: white;
+	border: none;
+	border-radius: 3px;
+	padding: 4px 6px;
+	font-size: 12px;
+	cursor: pointer;
 }
 
 /** ----- Footer ----- **/
