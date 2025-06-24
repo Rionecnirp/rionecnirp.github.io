@@ -46,19 +46,37 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 /** end reset css**/
+
+/** ----- General ----- **/
+
 body {
 	max-width: 1140px;
 	margin:auto;
-	font-family: 'Work Sans' ;
+	font-family: 'Work Sans';
 	font-size: 14px;
+    background-color: #FFFEF8;
 }
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h2{
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 30px;
+	color: #1D6154
+}
+
+/** ----- Header ----- **/
+
+
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
-}
-section {
 	margin: 50px 0
 }
 
@@ -78,12 +96,6 @@ h1 > span {
 ;
 }
 
-h2{
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 30px;
-	color: #1D6154
-}
 nav ul {
 	display: flex;
 	align-items: center;
@@ -98,75 +110,35 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
-#introduction {
-	display: flex;
-	align-items: center;
-}
-#introduction figure {
-	flex: 1
-}
-#introduction img {
-	display: block;
-	margin: auto;
-	width: 80%;
+
+.gras {
+	font-weight: bold;
 }
 
-#introduction article {
-	flex: 1
-}
-#introduction h2 {
-	margin-bottom: 1em;
-}
+/** ----- Formulaire ----- **/
 
-#introduction p {
-	margin-bottom: 0.5em;
-}
-#portfolio h2 {
-	text-align: center;
-	margin-bottom: 1em;
-}
-.gallery {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
-}
-
-.gallery img {
-	width: 100%;
-
-}
-#contact {
-	width: 50%;
-margin: auto;
-}
-#contact > * {
-	text-align: center;
-
-}
-#contact h2{
-	margin-bottom: 20px;
-}
-#contact form {
-	text-align: left;
-	margin-top:30px;
+.login-form {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 80px;
 }
 
-#contact input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+.btn-connection{
+    width: 179px;
+    height: 36px;
 }
-#contact label {
-	margin: 2em 0 1em 0;
-}
-#contact textarea {
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+
+input {
+    width: 379px;
+    height: 51px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 input[type="submit"]{
@@ -180,13 +152,23 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+label {
+    font-size: 14px;
+    font-weight: 500;
+    
+}
+
+/** ----- Footer ----- **/
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
 
-a {
-	text-decoration: none;
-	color: inherit;
+
+
+
+footer {
+    background-color: white;
 }

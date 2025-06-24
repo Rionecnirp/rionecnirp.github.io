@@ -1,0 +1,341 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/** end reset css**/
+
+/** ----- General ----- **/
+
+body {
+	max-width: 1140px;
+	margin:auto;
+	font-family: 'Work Sans' ;
+	font-size: 14px;
+	background-color: #FFFEF8;
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+nav li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+li:hover {
+	color: #B1663C;
+}
+
+section {
+	margin: 50px 0
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+/** ----- Admin ----- **/
+
+.edit-mode-barre {
+	background-color: black;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	color: white;
+	font-size: 20px;
+}
+
+.projets {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: baseline;
+	gap: 30px;
+	margin-top: 85px;
+	margin-bottom: 5px;
+	padding-left: 75px;
+}
+
+.edit-mode-modifier-gallerie {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	font-size: 18px;
+}
+
+.edit-mode-modifier-gallerie i, .edit-mode-modifier-gallerie p {
+	color: black;
+	display: flex;
+}
+
+.hidden {
+	display : none;
+}
+
+/** ----- Header ----- **/
+
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0
+}
+
+
+h1{
+	display: flex;
+	flex-direction: column;
+	font-family: 'Syne';
+	font-size: 22px;
+	font-weight: 800;
+	color: #B1663C
+}
+
+h1 > span {
+	font-family: 'Work Sans';
+	font-size:10px;
+	letter-spacing: 0.1em;
+;
+}
+
+/** ----- Main ----- **/
+
+h2{
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 30px;
+	color: #1D6154
+}
+
+/** --- introduction --- **/
+
+#introduction {
+	display: flex;
+	align-items: center;
+}
+#introduction figure {
+	flex: 1
+}
+#introduction img {
+	display: block;
+	margin: auto;
+	width: 80%;
+}
+
+#introduction article {
+	flex: 1
+}
+#introduction h2 {
+	margin-bottom: 1em;
+}
+
+#introduction p {
+	margin-bottom: 0.5em;
+}
+
+/** --- Portfolio --- **/
+
+#portfolio h2 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.filtres {
+	display: flex;
+	justify-content: space-between;
+	width: 585px;
+	margin: auto;
+	margin-bottom: 50px;
+	
+}
+
+.filtres button {
+	border: 1px solid #1D6154;
+	border-radius: 30px;
+	padding: 9px;
+	font-weight: 700;
+	min-width: 100px;
+	font-size: 16px;
+	font-family: 'Syne';
+}
+
+.filtres button:hover, .filtresbutton:focus, .boutonTous{
+	background-color: #1D6154;
+	color: white;
+}
+
+.filter-btn {
+	background-color: #FFFEF8;
+	color: #1D6154;
+}
+
+.gallery {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+
+.gallery img {
+	width: 100%;
+
+}
+
+/** --- Contact --- **/
+
+#contact {
+	width: 50%;
+margin: auto;
+}
+#contact > * {
+	text-align: center;
+
+}
+#contact h2{
+	margin-bottom: 20px;
+}
+#contact form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#contact input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#contact label {
+	margin: 2em 0 1em 0;
+}
+#contact textarea {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+input[type="submit"]{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+}
+
+/** --- Modal --- **/
+
+.modal {
+	background-color: rgba(0, 0, 0, 0.3);
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+
+.modalGallery{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	overflow: auto;
+	width: 630px;
+	height: 688px;
+	padding: 20px;
+	background-color: #FFFEF8;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	font-size: 26px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 36px;
+}
+
+.modal.open {
+	opacity: 1;
+	z-index: 10;
+	display: flex;
+}
+
+.separation {
+	width: 420px;
+	border: 1px solid #b3b3b3;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/** ----- Footer ----- **/
+
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
