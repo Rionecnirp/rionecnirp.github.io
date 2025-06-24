@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	<div class="edit-mode-barre">
+	<div class="edit-mode-barre hidden">
 		<i class="fa-solid fa-pen-to-square"></i>
 		<p>Mode édition</p>
 	</div>
@@ -27,13 +27,13 @@
 				<li><a href="#projets">projets</a></li>
 				<li><a href="#contact">contact</a></li>
 				<li><a href="login.html">login</a></li>
-				<li>logout</li>
+				<li class="hidden">logout</li>
 				<li><img src="../assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
 	</header>
 
-	<main>
+	<main class="main">
 		<section id="introduction">
 			<figure>
 				<img src="../assets/images/sophie-bluel.png" alt="">
@@ -49,9 +49,8 @@
 		<section id="portfolio">
 				<div class="projets">
 					<h2 id="projets">Mes Projets</h2>
-					<div class="edit-mode-modifier-gallerie">
-						<button id="openModal"><i class="fa-solid fa-pen-to-square"></i><p>modifier</p></button>
-						
+					<div class="edit-mode-modifier-gallerie" id="openModal">
+						<i class="fa-solid fa-pen-to-square"></i><p>modifier</p></button>
 					</div>
 				</div>
 
@@ -86,12 +85,33 @@
 			</form>
 		</section>
 
-		<section class="modal" id="modal">
+		<section class="modal" >
+			<div class="modalGallery">
+				<h2>Galerie photo</h2>
+				<button class="closeModal"><i class="fa-solid fa-xmark"></i></button>
+				<div class="separation"></div>
+				<button>Ajouter une photo</button>
+			</div>
+		</section>
+
+		<section class="modal" id="modalWork">
 			<h2>Galerie photo</h2>
 			<button class="returnModal"><i class="fa-solid fa-arrow-left"></i></i></button>
 			<button class="closeModal"><i class="fa-solid fa-xmark"></i></button>
-		</section>
+			<form>
+				<div>
+					<input type="file" accept="images/*" required>
+					<label for="title">Titre</label>
+					<input type="text" id="title" required>
 
+					<label for="category">Catégorie</label>
+					<select id="category" required></select>
+				</div>
+				
+			</form>
+			<div class="separation"></div>
+			<button>Valider</button>
+		</section>
 
 	</main>
 

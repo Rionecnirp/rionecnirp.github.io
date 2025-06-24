@@ -111,6 +111,10 @@ li:hover {
 	color: #B1663C;
 }
 
+.gras {
+	font-weight: bold;
+}
+
 /** ----- Formulaire ----- **/
 
 .login-form {
