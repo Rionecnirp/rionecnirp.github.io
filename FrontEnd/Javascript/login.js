@@ -1,10 +1,5 @@
-
-
-
 const connexion = document.querySelector(".login-form")
-
-
-
+const boutonConnexion = document.querySelector("#boutonConnexion")
 
 async function login() {
     const email = document.querySelector("#email").value
@@ -45,10 +40,9 @@ async function login() {
     }
 }
 
-
 connexion.addEventListener( "submit", function(event) {
     event.preventDefault()
     login();
 })
 
-
+boutonConnexion.style.cursor = "pointer"

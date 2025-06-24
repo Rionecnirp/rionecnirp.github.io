@@ -1,12 +1,46 @@
 const openModal = document.querySelector("#openModal")
-const closeModal = document.querySelector(".closeModal")
+const closeModalGallery = document.querySelector("#closeModalGallery")
+const closeModalWork = document.querySelector("#closeModalWork")
 const modal = document.querySelector(".modal")
+const modalGallery = document.querySelector(".modalGallery")
+const modalWork = document.querySelector(".modalWork")
+const returnModal = document.querySelector(".returnModal")
+const ajoutPhoto = document.querySelector("#AjoutPhoto")
 
+modalWork.style.display = "none"
 
-closeModal.addEventListener("click", () => {
+function ouvrirModal() {
+    modal.classList.add("open")
+}
+
+function fermerModal() {
     modal.classList.remove("open")
+}
+
+function retourArriereModal() {
+    modalWork.style.display = "none"
+    modalGallery.style.display = ""
+}
+
+function changementModal() {
+    modalWork.style.display = ""
+    modalGallery.style.display = "none"
+}
+
+closeModalGallery.addEventListener("click", () => {
+    fermerModal()
 })
 
-openModal.addEventListener("click", () => {
-    modal.classList.add("open")
+closeModalWork.addEventListener("click", () => {
+    fermerModal()
+})
+
+openModal.addEventListener("click", ouvrirModal)
+returnModal.addEventListener("click", retourArriereModal)
+ajoutPhoto.addEventListener("click", changementModal)
+
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        fermerModal()
+    }
 })

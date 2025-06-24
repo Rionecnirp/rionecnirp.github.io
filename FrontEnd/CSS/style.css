@@ -119,8 +119,8 @@ button:hover{
 	display: flex;
 }
 
-.hidden {
-	display : none;
+#logout {
+	cursor: pointer;
 }
 
 /** ----- Header ----- **/
@@ -219,6 +219,11 @@ h2{
 	color: #1D6154;
 }
 
+.selected {
+	background-color: #1D6154;
+	color: #FFFEF8;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -295,7 +300,7 @@ input[type="submit"]{
 	margin: 0px;
 }
 
-.modalGallery{
+.modalGallery, .modalWork{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -320,11 +325,74 @@ input[type="submit"]{
 	display: flex;
 }
 
+.closeModal {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	color: #333;
+	cursor: pointer;
+}
+
+.returnModal {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	color: #333;
+	cursor: pointer;
+}
+
+.modal-button {
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto;
+	width: 237px;
+	height: 36px;
+	text-align: center;
+	border-radius: 60px;
+	border: none;
+}
+
 .separation {
 	width: 420px;
 	border: 1px solid #b3b3b3;
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+.formAddWork {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.modalAddPhoto {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	background-color: #e8f1f6;
+	border-radius: 3px;
+	margin-bottom: 9px;
+	font-size: 10px;
+	width: 420px;
+	height: 169px;
+}
+
+.modal h3 {
+	font-size: 26px;
+  	font-weight: 400;
+  	text-align: center;
+  	padding-top: 40px;
+  	padding-bottom: 60px;
 }
 
 /** ----- Footer ----- **/

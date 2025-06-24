@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	<div class="edit-mode-barre hidden">
+	<div class="edit-mode-barre">
 		<i class="fa-solid fa-pen-to-square"></i>
 		<p>Mode édition</p>
 	</div>
@@ -26,8 +26,8 @@
 			<ul>
 				<li><a href="#projets">projets</a></li>
 				<li><a href="#contact">contact</a></li>
-				<li><a href="login.html">login</a></li>
-				<li class="hidden">logout</li>
+				<li id="login"><a href="login.html">login</a></li>
+				<li id="logout">logout</li>
 				<li><img src="../assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
@@ -87,30 +87,36 @@
 
 		<section class="modal" >
 			<div class="modalGallery">
-				<h2>Galerie photo</h2>
-				<button class="closeModal"><i class="fa-solid fa-xmark"></i></button>
+				<h3>Galerie photo</h3>
+				<button class="closeModal" id="closeModalGallery"><i class="fa-solid fa-xmark"></i></button>
 				<div class="separation"></div>
-				<button>Ajouter une photo</button>
+				<button class="modal-button" id="AjoutPhoto">Ajouter une photo</button>
+			</div>
+
+			<div class="modalWork">
+				<button class="returnModal"><i class="fa-solid fa-arrow-left"></i></i></button>
+				<button class="closeModal" id="closeModalWork"><i class="fa-solid fa-xmark"></i></button>
+				<h3>Ajout photo</h3>
+				<form class="formAddWork">
+					<div class="modalAddPhoto">
+						<i class="fa-regular fa-image"></i>
+						<label for="file" class="labelFile">+ Ajouter photo</label>
+						<p class="file-info">jpg, png : 4mo max</p>
+						<input type="file" name="image" accept="images/jpg, image/png" required>
+					</div>
+					<label for="title">Titre</label>
+					<input type="text" id="title" required>
+					<label for="category">Catégorie</label>
+					<select id="category" required></select>
+				</form>
+				<div class="separation"></div>
+				<button>Valider</button>
 			</div>
 		</section>
 
 		<section class="modal" id="modalWork">
 			<h2>Galerie photo</h2>
-			<button class="returnModal"><i class="fa-solid fa-arrow-left"></i></i></button>
-			<button class="closeModal"><i class="fa-solid fa-xmark"></i></button>
-			<form>
-				<div>
-					<input type="file" accept="images/*" required>
-					<label for="title">Titre</label>
-					<input type="text" id="title" required>
-
-					<label for="category">Catégorie</label>
-					<select id="category" required></select>
-				</div>
-				
-			</form>
-			<div class="separation"></div>
-			<button>Valider</button>
+			
 		</section>
 
 	</main>
