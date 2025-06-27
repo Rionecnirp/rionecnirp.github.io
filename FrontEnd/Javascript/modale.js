@@ -27,6 +27,7 @@ function retourArriereModal() {
 function changementModal() {
     modalWork.style.display = ""
     modalGallery.style.display = "none"
+    CategorieModules()
 }
 
 closeModalGallery.addEventListener("click", () => {
@@ -63,3 +64,23 @@ function displayWorksModal(works) {
   })
 }
 
+
+/*
+*/
+async function CategorieModules() {
+    try {
+        const recupCategories = await fetch("http://localhost:5678/api/categories")
+        const categories = await recupCategories.json()
+        const menuCategories = document.querySelector("#category")
+        menuCategories.innerHTML = ""
+
+        categories.forEach((cat) => {
+            const option = document.createElement("option")
+            option.value = cat.id
+            option.textContent = cat.name
+            menuCategories.appendChild(option)
+        })
+    } catch (error) {
+        console.error ("Erreur chargement des catégories :", error)
+    }
+}
