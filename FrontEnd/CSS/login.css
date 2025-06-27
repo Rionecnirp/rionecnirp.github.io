@@ -115,6 +115,11 @@ li:hover {
 	font-weight: bold;
 }
 
+li img {
+	height: 22px;
+	width: 22px;
+}
+
 /** ----- Formulaire ----- **/
 
 .login-form {

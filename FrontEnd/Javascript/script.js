@@ -99,7 +99,7 @@ getWorks()
 
 /* --- Gestion de ce qui apparait / disparait quand on se connecte/déconnecte --- */
 
-const token = localStorage.getItem("token")
+const token = sessionStorage.getItem("token")
 const login = document.querySelector("#login")
 const logout = document.querySelector("#logout")
 const filtres = document.querySelector(".filtres")
@@ -115,7 +115,7 @@ modeEdition.style.display = token ? "" : "none"
 openModal.style.display = token ? "" : "none"
 
 logout.addEventListener("click", () => {
-    localStorage.removeItem("token")
+    sessionStorage.removeItem("token")
     location.reload()
 })
 

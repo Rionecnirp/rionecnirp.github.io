@@ -3,7 +3,7 @@ const boutonConnexion = document.querySelector("#boutonConnexion")
 
 async function login() {
     const email = document.querySelector("#email").value
-    const password = document.querySelector("#mdp").value
+    const password = document.querySelector("#password").value
     const loginIncorrect = document.querySelector(".login-incorrect")
 
     try {
@@ -26,13 +26,13 @@ async function login() {
         }
 
         if (data.token) {
-            localStorage.setItem("token", data.token)
+            sessionStorage.setItem("token", data.token)
             window.location.href = "index.html"
         } else {
             throw new Error("Token manquant dans la réponse du serveur.");
         }
     } catch (error) {
-        localStorage.removeItem("token");
+        sessionStorage.removeItem("token");
         if (loginIncorrect) {
             loginIncorrect.innerHTML = error.message;
         }

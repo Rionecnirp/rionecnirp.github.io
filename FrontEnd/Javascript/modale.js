@@ -16,6 +16,7 @@ function ouvrirModal() {
 
 function fermerModal() {
     modal.classList.remove("open")
+    retourArriereModal()
 }
 
 function retourArriereModal() {
