@@ -65,7 +65,10 @@ function displayWorksModal(works) {
 }
 
 
-/*
+/* Création des catégories pour la modale d'ajout de photo :
+1) on récupère les catégories dans un json
+2) on récupère le sélecteur dans le formulaire d'envoi d'image
+3) On crée une option par catégorie existante
 */
 async function CategorieModules() {
     try {
@@ -82,5 +85,71 @@ async function CategorieModules() {
         })
     } catch (error) {
         console.error ("Erreur chargement des catégories :", error)
+    }
+}
+
+const titreInput = document.querySelector("#title")
+const menuCategoriesIdInput = document.querySelector("#category")
+const nouvelleImageInput = document.querySelector("#file")
+const boutonEnvoiPhoto = document.querySelector(".boutonEnvoyer")
+const formulaireEnvoiPhoto = document.querySelector(".formAddWork")
+
+function validationChamps() {
+    const titre = titreInput.value !== ""
+    const menuCategoriesId = menuCategoriesIdInput.value !== ""
+    const nouvelleImage = nouvelleImageInput.files.length > 0
+    if (titre && menuCategoriesId && nouvelleImage){
+        boutonEnvoiPhoto.id = ""
+    } else {
+        boutonEnvoiPhoto.id = "attenteValidation"
+    }
+} 
+
+titreInput.addEventListener("input", validationChamps)
+menuCategoriesIdInput.addEventListener("change", validationChamps)
+nouvelleImageInput.addEventListener("change", validationChamps)
+
+formulaireEnvoiPhoto.addEventListener("submit", function(event)  {
+    event.preventDefault()
+    envoiPhoto()
+    fermerModal()
+})
+
+async function envoiPhoto() {
+    const titre = titreInput.value
+    const menuCategoriesId = menuCategoriesIdInput.value
+    const nouvelleImage = nouvelleImageInput.files[0]
+    const token = sessionStorage.getItem("token")
+
+    if (!titre || !menuCategoriesId || !nouvelleImage) {
+        alert("Veuillez remplir tous les champs et sélectionner une image.")
+        return
+    }
+
+    const formData = new FormData()
+    formData.append("title", titre)
+    formData.append("category", menuCategoriesId)
+    formData.append("image", nouvelleImage)
+
+    try {
+        const response = await fetch("http://localhost:5678/api/works", {
+            method : "POST",
+            headers : {
+                Authorization : `Bearer ${token}`,
+            },
+            body : formData,
+        })
+
+        if (response.ok) {
+            const newWork = await response.json()
+            window.allWorks.push(newWork)
+
+            displayWorks(allWorks)
+            displayWorksModal(allWorks)
+        } else {
+            alert(`Erreur lors de l'envoi. Code ${response.status}`)
+        }
+    } catch (error) {
+        alert("Erreur réseau : " + error.message)
     }
 }

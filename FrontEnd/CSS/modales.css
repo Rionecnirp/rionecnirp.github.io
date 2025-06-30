@@ -142,3 +142,18 @@
 	font-size: 12px;
 	cursor: pointer;
 }
+
+#photo {
+    font-size: 76px;
+    color: #b9c5cc;
+}
+
+#attenteValidation {
+    background-color: #A7A7A7;
+	cursor: auto;
+}
+
+#AjouterPhoto {
+    width: 173px;
+    background-color: #CBD6DC;
+}

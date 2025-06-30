@@ -103,18 +103,19 @@
 				<h3>Ajout photo</h3>
 				<form class="formAddWork">
 					<div class="modalAddPhoto">
-						<i class="fa-regular fa-image"></i>
-						<label for="file" class="labelFile">+ Ajouter photo</label>
+						<i class="fa-regular fa-image" id="photo"></i>
+						<label for="file" class="labelFile modal-button" id="AjouterPhoto">+ Ajouter photo</label>
+						<input type="file" id="file" name="image" accept="image/jpg, image/png" required>
 						<p class="file-info">jpg, png : 4mo max</p>
-						<input type="file" id="file" name="image" accept="images/jpg, image/png" required>
 					</div>
 					<label for="title">Titre</label>
 					<input type="text" id="title" required>
 					<label for="category">Catégorie</label>
 					<select id="category" required></select>
+					<div class="separation"></div>
+					<button class="modal-button boutonEnvoyer" id="attenteValidation" type="submit">Valider</button>
 				</form>
-				<div class="separation"></div>
-				<button>Valider</button>
+				
 			</div>
 		</section>
 
