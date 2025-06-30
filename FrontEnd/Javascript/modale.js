@@ -79,6 +79,13 @@ async function CategorieModules() {
         const menuCategories = document.querySelector("#category")
         menuCategories.innerHTML = ""
 
+        const emptyOption = document.createElement("option")
+        emptyOption.value = ""
+        emptyOption.textContent = ""
+        emptyOption.selected = true
+        emptyOption.disabled = true
+        menuCategories.appendChild(emptyOption)
+
         categories.forEach((cat) => {
             const option = document.createElement("option")
             option.value = cat.id

@@ -180,3 +180,34 @@
 	object-fit: cover;
 	display: none;
 }
+
+label {
+	font-size: 16px;
+	font-weight: 500;
+	display: flex;
+}
+
+#title, #category {
+    max-width: 420px;
+    height: 51px;
+    margin-bottom: 30px;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+	background-color: white;
+	font-size: 14px;
+	font-family: 'Work Sans';
+	font-weight: 400;
+}
+
+#title {
+	padding-left: 20px;
+}
+
+select, select option{
+	font-size: 16px;
+	font-family: 'Work Sans';
+	font-weight: 400;
+	padding-left: 20px;
+	padding-right: 40px;
+}
+
