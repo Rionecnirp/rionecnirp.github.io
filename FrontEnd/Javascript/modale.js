@@ -17,11 +17,13 @@ function ouvrirModal() {
 function fermerModal() {
     modal.classList.remove("open")
     retourArriereModal()
+    resetPhoto()
 }
 
 function retourArriereModal() {
     modalWork.style.display = "none"
     modalGallery.style.display = ""
+    resetPhoto()
 }
 
 function changementModal() {
@@ -152,4 +154,38 @@ async function envoiPhoto() {
     } catch (error) {
         alert("Erreur réseau : " + error.message)
     }
+
+}
+
+const imagePreview = document.querySelector(".preview")
+const modalAddPhoto = document.querySelector(".modalAddPhoto")
+
+nouvelleImageInput.addEventListener("change", () => {
+    const nouvelleImage = nouvelleImageInput.files && nouvelleImageInput.files[0]
+
+    if (!nouvelleImage) return
+
+    const reader = new FileReader()
+    reader.onload = function (e) {
+        imagePreview.src = e.target.result
+        imagePreview.style.display = "block"
+        Array.from(modalAddPhoto.children).forEach(child => {
+            if (!child.classList.contains("preview")) {
+                child.style.display = "none"
+            }
+        })
+    }
+    reader.readAsDataURL(nouvelleImage)
+})
+
+function resetPhoto() {
+    titreInput.value = ""
+    menuCategoriesIdInput.value = ""
+    nouvelleImageInput.value = ""
+    Array.from(modalAddPhoto.children).forEach(child => {
+            if (!child.classList.contains("preview")) {
+                child.style.display = ""
+            }
+        })
+    imagePreview.style.display = "none"
 }
