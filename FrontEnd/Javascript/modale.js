@@ -56,14 +56,40 @@ function displayWorksModal(works) {
     const galleryContent = document.querySelector(".galleryContent")
     galleryContent.innerHTML = ""
 
-    works.forEach(({ imageUrl, title }) => {
-    const figure = document.createElement("figure")
-    figure.innerHTML = `
-        <img src="${imageUrl}" alt="${title}">
-        <button class="deleteButton"><i class="fa-solid fa-trash-can"></i></button>
-    `
-    galleryContent.appendChild(figure)
-  })
+    works.forEach(({ id, imageUrl, title }) => {
+        const figure = document.createElement("figure")
+        
+        figure.innerHTML = `
+            <img src="${imageUrl}" alt="${title}">
+            <button class="deleteButton"><i class="fa-solid fa-trash-can"></i></button>
+        `
+        galleryContent.appendChild(figure)
+
+        const deleteButton = figure.querySelector(".deleteButton")
+        deleteButton.addEventListener("click", async () => {
+            try {
+                const token = sessionStorage.getItem("token")
+                const response = await fetch(`http://localhost:5678/api/works/${id}`, {
+                    method: "DELETE",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
+
+                if (response.ok) {
+                    window.allWorks = window.allWorks.filter(work => work.id !== id)
+                    figure.remove()
+                    fermerModal()
+                    displayWorks(allWorks)
+                    displayWorksModal(allWorks)
+                } else {
+                    console.error("Erreur lors de la suppression", response.status)
+                }
+            } catch (error) {
+                console.error("Erreur lors de la requête DELETE :", error)
+            }
+        })
+    })
 }
 
 
@@ -196,3 +222,4 @@ function resetPhoto() {
         })
     imagePreview.style.display = "none"
 }
+
