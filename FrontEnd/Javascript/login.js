@@ -1,10 +1,10 @@
-const connexion = document.querySelector(".login-form")
+const connexion = document.querySelector(".formulaireLogin")
 const boutonConnexion = document.querySelector("#boutonConnexion")
 
 async function login() {
     const email = document.querySelector("#email").value
     const password = document.querySelector("#password").value
-    const loginIncorrect = document.querySelector(".login-incorrect")
+    const loginIncorrect = document.querySelector(".loginIncorrect")
 
     try {
         const response = await fetch ("http://localhost:5678/api/users/login", {
@@ -22,7 +22,7 @@ async function login() {
         const data = await response.json();
 
         if (!response.ok) {
-            throw new Error ("Identifiants invalides")
+            throw new Error ("Adresse e-mail ou mot de passe non valide.")
         }
 
         if (data.token) {
