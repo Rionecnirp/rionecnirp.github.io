@@ -23,17 +23,21 @@
 	position: relative;
 	overflow: auto;
 	width: 630px;
-	min-height: 688px;
-	padding: 20px;
 	background-color: #FFFEF8;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	font-size: 26px;
     font-weight: 400;
     text-align: center;
-    padding-top: 40px;
-    padding-bottom: 36px;
 	background-color: white;
+}
+
+.modalGallery {
+	min-height: 688px;
+}
+
+.modalWork {
+	height: 670px;
 }
 
 .modal.open {
@@ -69,10 +73,10 @@
 	font-weight: 700;
 	color: white;
 	background-color: #1D6154;
-	margin : 2em auto;
+	margin-left: auto;
+	margin-right: auto;
 	width: 237px;
 	height: 36px;
-	text-align: center;
 	border-radius: 60px;
 	border: none;
 }
@@ -80,7 +84,6 @@
 .separation {
 	width: 420px;
 	border: 1px solid #b3b3b3;
-	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
@@ -108,8 +111,8 @@
 	font-size: 26px;
   	font-weight: 400;
   	text-align: center;
-  	padding-top: 40px;
-  	padding-bottom: 60px;
+  	padding-top: 60px;
+  	padding-bottom: 40px;
 }
 
 .galleryContent {
@@ -118,7 +121,7 @@
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-column-gap: 6px;
 	grid-row-gap: 25px;
-	width: 419px;
+	width: 420px;
 	margin-bottom: 30px;
 }
 
@@ -137,10 +140,12 @@
 	background-color: black;
 	color: white;
 	border: none;
-	border-radius: 3px;
-	padding: 4px 6px;
+	border-radius: 2px;
+	padding: 0px;
 	font-size: 12px;
 	cursor: pointer;
+	width: 17px;
+	height: 17px;
 }
 
 #photo {
@@ -153,19 +158,16 @@
 	cursor: auto;
 }
 
-#AjouterPhoto {
-    width: 173px;
-    background-color: #CBD6DC;
-}
-
 .labelFile {
 	cursor: pointer;
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: #306685;
-	font-size: 16px;
-	margin: 10px;
+	font-size: 14px;
+	width: 173px;
+	background-color: #CBD6DC;
+	font-weight: 500;
+	font-family: 'work sans';
 }
 
 #file {
@@ -182,7 +184,7 @@
 }
 
 label {
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 500;
 	display: flex;
 }
@@ -190,7 +192,7 @@ label {
 #title, #category {
     max-width: 420px;
     height: 51px;
-    margin-bottom: 30px;
+    
     border: none;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
 	background-color: white;
@@ -201,6 +203,11 @@ label {
 
 #title {
 	padding-left: 20px;
+	margin-bottom: 10px;
+}
+
+#category {
+	margin-bottom: 30px;
 }
 
 select, select option{
@@ -210,4 +217,9 @@ select, select option{
 	padding-left: 20px;
 	padding-right: 40px;
 }
-
+/*
+.gallery figure {
+	width: 310px;
+	height: 410px;
+}
+*/

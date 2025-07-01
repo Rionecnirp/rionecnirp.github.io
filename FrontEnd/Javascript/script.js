@@ -35,8 +35,8 @@ function displayWorks(works) {
   works.forEach(({ imageUrl, title }) => {
     const figure = document.createElement("figure")
     figure.innerHTML = `
-      <img src="${imageUrl}" alt="${title}">
-      <figcaption>${title}</figcaption>
+        <img src="${imageUrl}" alt="${title}">
+        <figcaption>${title}</figcaption>
     `
     gallery.appendChild(figure)
   })
@@ -118,3 +118,4 @@ logout.addEventListener("click", () => {
     location.reload()
 })
 
+/* ----- Fin du code, il n'y a plus rien à voir ----- */

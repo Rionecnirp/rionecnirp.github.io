@@ -54,3 +54,5 @@ connexion.addEventListener( "submit", function(event) {
     event.preventDefault()
     login();
 })
+
+/* ----- Fin du code, il n'y a plus rien à voir ----- */
