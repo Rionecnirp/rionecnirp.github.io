@@ -172,6 +172,14 @@ label {
 	color: red;
 }
 
+form > a {
+	text-decoration: underline;
+}
+
+#boutonConnexion {
+	cursor: pointer;
+}
+
 /** ----- Footer ----- **/
 
 footer ul {

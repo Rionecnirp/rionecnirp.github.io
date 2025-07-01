@@ -1,6 +1,13 @@
 const connexion = document.querySelector(".formulaireLogin")
 const boutonConnexion = document.querySelector("#boutonConnexion")
 
+/* Connexion avec les identifiants donnés :
+1) On crée les variables nécessaires (email, mdp) et on prépare au cas où la ligne qui spécifie un login incorrect.
+2) On envoie au serveur les informations contenues dans le formulaire.
+3) Elles ne sont pas bonnes, on le dit à l'utilisateur. Sinon on stocke les infos dans un fichier json et on fait un token.
+4) Le token servira comme badge pour identifier l'utilisateur et servira sur la page index.html
+*/
+
 async function login() {
     const email = document.querySelector("#email").value
     const password = document.querySelector("#password").value
@@ -40,9 +47,10 @@ async function login() {
     }
 }
 
+/* On place un eventListener sur le bouton de connexion pour lancer la fonction
+*/
+
 connexion.addEventListener( "submit", function(event) {
     event.preventDefault()
     login();
 })
-
-boutonConnexion.style.cursor = "pointer"
