@@ -1,4 +1,6 @@
-
+/* Point de détail : Pour que les fonctions dans modale.js fonctionnent, allWorks doit être rendues
+disponibles pour tous les fichiers js.
+*/
 const gallery = document.querySelector(".gallery")
 const filtersContainer = document.querySelector(".filtres")
 window.allWorks = []
@@ -97,16 +99,13 @@ function filterWorks(categoryId) {
 
 getWorks() 
 
-/* --- Gestion de ce qui apparait / disparait quand on se connecte/déconnecte --- */
+/* --- Gestion de ce qui apparait/disparait quand on se connecte/déconnecte --- */
 
 const token = sessionStorage.getItem("token")
 const login = document.querySelector("#login")
 const logout = document.querySelector("#logout")
 const filtres = document.querySelector(".filtres")
 const modeEdition = document.querySelector(".edit-mode-barre")
-
-
-console.log(token)
 
 login.style.display = token ? "none" : ""
 logout.style.display = token ? "" : "none"
