@@ -290,6 +290,14 @@ input[type="submit"]{
 
 /** ----- Footer ----- **/
 
+footer {
+	height: 60px;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+}
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
